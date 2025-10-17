@@ -1,6 +1,6 @@
 //
 //  DayListView.swift
-//  DiceRoll
+//  WaterTracker Watch App
 //
 //  Created by Marcos on 16/10/25.
 //
@@ -10,7 +10,9 @@ import SwiftData
 
 struct DayListView: View {
     @Environment(\.modelContext) private var context
+    
     @Query(sort: \WaterDay.date, order: .reverse) private var days: [WaterDay]
+    
     @State private var showingAddDay = false
 
     var body: some View {

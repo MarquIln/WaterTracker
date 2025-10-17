@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  WaterTracker Watch App
 //
-//  Simplified: no MVVM, direct SwiftData usage
+//  Created by Marcos on 16/10/25.
 //
 
 import SwiftUI

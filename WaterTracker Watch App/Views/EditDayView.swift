@@ -1,16 +1,18 @@
 //
 //  EditDayView.swift
-//  DiceRoll
+//  WaterTracker Watch App
 //
 //  Created by Marcos on 16/10/25.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct EditDayView: View {
     @Environment(\.modelContext) private var context
     @Bindable var day: WaterDay
+
+    @State private var sliderValue: Double = 0
 
     var body: some View {
         VStack(spacing: 16) {
@@ -27,13 +29,15 @@ struct EditDayView: View {
             }
             .buttonStyle(.borderedProminent)
 
-            Slider(value: Binding(
-                get: { Double(day.amount) },
-                set: { day.amount = Int($0); try? context.save() }
-            ), in: 0...5000, step: 50)
+            Slider(value: $sliderValue, in: 0...5000, step: 50)
+                .onChange(of: sliderValue) { _, newValue in
+                    day.amount = Int(newValue)
+                    try? context.save()
+                }
 
             Spacer()
         }
+        .onAppear { sliderValue = Double(day.amount) }
         .padding()
         .navigationTitle("Editar Dia")
     }

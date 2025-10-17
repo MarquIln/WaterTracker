@@ -1,6 +1,6 @@
 //
 //  WaterDay.swift
-//  DiceRoll
+//  WaterTracker Watch App
 //
 //  Created by Marcos on 16/10/25.
 //

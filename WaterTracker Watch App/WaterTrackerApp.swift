@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
-struct WaterTracker_Watch_AppApp: App {
+struct WaterTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: WaterDay.self)
     }
 }

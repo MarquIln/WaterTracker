@@ -1,6 +1,6 @@
 //
 //  AddDayView.swift
-//  DiceRoll
+//  WaterTracker Watch App
 //
 //  Created by Marcos on 16/10/25.
 //
@@ -10,11 +10,12 @@ import SwiftData
 
 struct AddDayView: View {
     @Environment(\.modelContext) private var context
-    @Binding var isPresented: Bool
-
+    
     @State private var selectedDate = Date()
     @State private var amount = 0
     @State private var errorMessage: String?
+    
+    @Binding var isPresented: Bool
 
     private var dateRange: ClosedRange<Date> {
         let calendar = Calendar.current
